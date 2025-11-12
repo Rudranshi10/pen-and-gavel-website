@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>experiences</title>
+    
+
+  </head>
+    
+  <body>
+  <html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Life Experiences — Stories from the Heart</title>
+
+<style>
+    :root{
+        --brown:#9A6035;
+        --gold:#C79861;
+        --cream:#F4EFE9;
+    }
+    *{box-sizing:border-box;}
+
+    body{
+        margin:0;
+        font-family:"The Seasons", serif;
+        background:var(--brown);
+        color:var(--cream);
+    }
+
+    .site-header{
+        background:var(--gold);
+        color:var(--cream);
+        padding:22px 28px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        border-bottom:6px solid rgba(0,0,0,0.10);
+        font-family:"Maharlika", serif;
+        position:sticky;
+        top:0;
+        z-index:20;
+    }
+    .brand{
+        font-family:"Playfair Display", serif;
+        font-size:38px;
+        letter-spacing:1px;
+        color:var(--cream);
+    }
+    .nav{
+        display:flex;
+        gap:22px;
+        align-items:center;
+    }
+    .nav a{
+        color:var(--cream);
+        text-decoration:none;
+        font-size:16px;
+    }
+
+    .container{
+        max-width:1100px;
+        margin:26px auto;
+        padding:0 24px 120px;
+    }
+
+    .banner{
+        overflow:hidden;
+        border-radius:6px;
+        margin-bottom:18px;
+    }
+    .banner img{
+        width:100%;
+        height:200px;
+        object-fit:cover;
+        border-radius:6px;
+    }
+
+    .page-title{
+        font-size:32px;
+        font-family:"Playfair Display", serif;
+        margin:0 0 6px;
+    }
+    .meta{
+        font-size:14px;
+        color:var(--cream);
+    }
+    .divider-hr{
+        border:none;
+        border-top:1px solid rgba(255,255,255,0.20);
+        margin:18px 0 28px;
+    }
+
+    .share-wrap{
+        border:1px solid rgba(255,255,255,0.20);
+        padding:18px;
+        display:flex;
+        gap:16px;
+        align-items:center;
+        margin-bottom:28px;
+    }
+    .share-input{
+        flex:1;
+        padding:14px 16px;
+        background:transparent;
+        border:1px solid rgba(255,255,255,0.20);
+        color:var(--cream);
+        border-radius:2px;
+        font-size:16px;
+    }
+    .send-btn{
+        width:140px;
+        background:var(--gold);
+        color:var(--cream);
+        font-size:20px;
+        padding:12px 18px;
+        border:none;
+        cursor:pointer;
+        border-radius:2px;
+    }
+
+    .post-card{
+        border:1px solid rgba(255,255,255,0.20);
+        padding:22px;
+        margin-bottom:26px;
+        background:rgba(255,255,255,0.05);
+        position:relative;
+    }
+
+    .post-header{
+        display:flex;
+        align-items:center;
+        gap:14px;
+    }
+    .avatar{
+        width:54px;
+        height:54px;
+        border-radius:50%;
+        overflow:hidden;
+        border:2px solid rgba(255,255,255,0.20);
+    }
+    .avatar img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+
+    .post-author{
+        font-size:18px;
+        font-weight:700;
+    }
+    .post-time{
+        font-size:13px;
+        opacity:0.8;
+    }
+
+    .post-title{
+        font-size:22px;
+        margin:14px 0 12px;
+    }
+
+    .post-body{
+        line-height:1.8;
+        font-size:16px;
+    }
+
+    .like-btn{
+        display:flex;
+        gap:10px;
+        align-items:center;
+        cursor:pointer;
+        border:none;
+        font-size:18px;
+        background:transparent;
+        color:var(--cream);
+        margin-top:14px;
+    }
+
+    .comment-input{
+        margin-top:14px;
+        width:100%;
+        padding:10px 14px;
+        border:1px solid rgba(255,255,255,0.20);
+        background:transparent;
+        color:var(--cream);
+        border-radius:2px;
+    }
+
+    .comments-list{
+        margin-top:12px;
+    }
+    .comment-item{
+        margin-top:10px;
+        padding:10px;
+        border-left:3px solid rgba(255,255,255,0.25);
+    }
+    .comment-author{
+        font-weight:700;
+        margin-right:8px;
+    }
+
+    /* ✅ menu styling */
+    .post-menu{
+        position:absolute;
+        top:20px;
+        right:20px;
+        cursor:pointer;
+        z-index:20;
+    }
+    .dots{
+        font-size:22px;
+    }
+    .menu-dropdown{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:30px;
+        right:0;
+        background:var(--gold);
+        padding:8px;
+        border-radius:6px;
+        box-shadow:0 6px 18px rgba(0,0,0,0.15);
+        z-index:50;
+    }
+    .menu-dropdown button{
+        background:transparent;
+        border:none;
+        padding:6px 10px;
+        color:var(--cream);
+        font-weight:700;
+        cursor:pointer;
+        text-align:left;
+    }
+
+    .site-footer{
+        background:var(--gold);
+        color:var(--cream);
+        padding:36px 20px;
+        font-family:"The Seasons", serif;
+    }
+
+    .footer-grid{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
+        max-width:1100px;
+        margin:0 auto;
+        text-align:center;
+    }
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="brand">PEN &amp; GAVEL</div>
+    <nav class="nav">
+        <li><a href="pages/index.html">Homepage</a></li>
+    <li><a href="pages/about.html">About</a></li>
+<li><a href="pages/constitutional-articles.html">Constitutional Articles</a></li>
+<li><a href="pages/past-cases.html">Past Cases</a></li>
+<li><a href="pages/literary.html">Literary Works</a></li>
+<li><a href="pages/legislation.html">Legislation</a></li>
+    </nav>
+</header>
+
+<main class="container">
+    <div class="banner">
+        <img src="https://i.ibb.co/Fqqv8pwn/personal-experiences.jpg" />
+    </div>
+
+    <h1 class="page-title">LIFE EXPERIENCES — STORIES FROM THE HEART ✧</h1>
+    <div class="meta">Public</div>
+    <hr class="divider-hr">
+
+    <section class="share-wrap">
+        <input class="share-input" id="shareText" placeholder="Share something..." />
+        <button class="send-btn" id="shareBtn">send</button>
+    </section>
+
+    <section id="postsContainer"></section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-grid">
+        <div><p>7827170170 - NCW Helpline:<br>Connects women directly to police, hospitals, One Stop Centres, and legal authorities.</p></div>
+        <div><p>1091 - Women Police Helpline:<br>Immediate police assistance linked to ERSS 112.</p></div>
+        <div><p>108 - Ambulance Helpline:<br>Quick access to emergency medical services.</p></div>
+        <div><p>181 - Women Helpline:<br>24x7 counselling, legal help, welfare scheme info.</p></div>
+        <div><p>112 - National Emergency Number:<br>Police, fire, ambulance — single national helpline.</p></div>
+        <div><p>Reach us at:<br><strong>penandgavelofficial@gmail.com</strong></p></div>
+    </div>
+</footer>
+
+
+<!-- ✅ FIREBASE + LOGIC  -->
+<script type="module">
+
+const firebaseConfig = {
+    apiKey: "AIzaSyC4Yjfr1WqoM-PmEQxHq-Sj2BTQvmoBOkk",
+        authDomain: "penandgavelposts.firebaseapp.com",
+        databaseURL: "https://penandgavelposts-default-rtdb.firebaseio.com/",
+        projectId: "penandgavelposts",
+        storageBucket: "penandgavelposts.firebasestorage.app",
+        messagingSenderId: "1094706446735",
+        appId: "1:1094706446735:web:0d86c105c86ba51ab20bfa"
+};
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+import {
+    getDatabase,
+    ref,
+    push,
+    onValue,
+    set,
+    get,
+    update,
+    runTransaction,
+    remove,
+    child
+} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase(app);
+
+const postsContainer = document.getElementById("postsContainer");
+const shareInput = document.getElementById("shareText");
+const shareBtn = document.getElementById("shareBtn");
+let currentUser = null;
+
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        alert("Login required.");
+        return;
+    } else {
+        currentUser = user;
+        ensureSamplePost().then(setupRealtimeListeners);
+    }
+});
+
+async function ensureSamplePost() {
+    const sampleRef = ref(db, "experiences/sample_post");
+    const snap = await get(sampleRef);
+    if (!snap.exists()) {
+        await set(sampleRef, {
+            id: "sample_post",
+            title: "Voices of Strength",
+            body: "Your journey matters — every triumph, every tear, every quiet moment of strength. This is a safe and nurturing corner where women can open up about their personal experiences. Share your story, and let it remind another woman that she’s not alone. Together, our stories weave a tapestry of courage and connection.",
+            authorName: "Pen&Gavel",
+            authorAvatar: "https://i.ibb.co/m5xLPmHZ/Corporate-Logo-Designs-Logo-Image-1.jpg",
+            createdAt: Date.now(),
+            likesCount: 0,
+            likedBy: {}
+        });
+    }
+}
+
+async function createPost(text){
+    if(!text.trim()) return;
+    const postsRef = ref(db, "experiences");
+    const newRef = push(postsRef);
+    await set(newRef, {
+        id: newRef.key,
+        title: "",
+        body: text,
+        authorName: currentUser.displayName || currentUser.email || "User",
+        authorAvatar: currentUser.photoURL || "https://i.ibb.co/m5xLPmHZ/Corporate-Logo-Designs-Logo-Image-1.jpg",
+        createdAt: Date.now(),
+        likesCount: 0,
+        likedBy: {}
+    });
+    shareInput.value = "";
+}
+
+async function toggleLike(postId){
+    const postRef = ref(db, `experiences/${postId}`);
+    await runTransaction(postRef, (post)=>{
+        if(post){
+            post.likedBy = post.likedBy || {};
+            const uid = currentUser.uid;
+            if(post.likedBy[uid]){
+                delete post.likedBy[uid];
+                post.likesCount--;
+            } else {
+                post.likedBy[uid] = true;
+                post.likesCount++;
+            }
+        }
+        return post;
+    });
+}
+
+async function addComment(postId,text){
+    if(!text.trim()) return;
+    await push(ref(db, `experiences/${postId}/comments`), {
+        authorName: currentUser.displayName || currentUser.email,
+        text: text,
+        createdAt: Date.now()
+    });
+}
+
+async function deletePost(postId){
+    await remove(ref(db, `experiences/${postId}`));
+}
+
+async function editPost(postId){
+    const snap = await get(ref(db, `experiences/${postId}`));
+    const data = snap.val();
+    const newBody = prompt("Edit:", data.body);
+    if(newBody!==null){
+        await update(ref(db, `experiences/${postId}`), {
+            body: newBody,
+            editedAt: Date.now()
+        });
+    }
+}
+
+/* ✅ Updated with menu */
+function createPostElement(postObj){
+    const wrapper = document.createElement("div");
+    wrapper.className="post-card";
+    wrapper.dataset.id = postObj.id;
+
+    /* ✅ 3-dot menu */
+    const menuWrap = document.createElement("div");
+    menuWrap.className = "post-menu";
+    menuWrap.innerHTML = `<div class="dots">⋮</div>`;
+
+    const dropdown = document.createElement("div");
+    dropdown.className = "menu-dropdown";
+    dropdown.innerHTML = `
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+        <button class="report-btn">Report</button>
+    `;
+
+    menuWrap.appendChild(dropdown);
+
+    menuWrap.onclick = (e)=>{
+        e.stopPropagation();
+        dropdown.style.display = dropdown.style.display==="flex" ? "none":"flex";
+    };
+
+    document.addEventListener("click", ()=> dropdown.style.display="none");
+
+    dropdown.querySelector(".edit-btn").onclick = ()=>{
+        dropdown.style.display="none";
+        editPost(postObj.id);
+    };
+
+    dropdown.querySelector(".delete-btn").onclick = ()=>{
+        dropdown.style.display="none";
+        if(confirm("Delete this post?")){
+            deletePost(postObj.id);
+        }
+    };
+
+    dropdown.querySelector(".report-btn").onclick = ()=>{
+        dropdown.style.display="none";
+        alert("Reported!");
+    };
+
+    /* header */
+    const head = document.createElement("div");
+    head.className="post-header";
+    head.innerHTML = `
+        <div class="avatar"><img src="${postObj.authorAvatar}"></div>
+        <div>
+            <div class="post-author">${postObj.authorName}</div>
+            <div class="post-time">${new Date(postObj.createdAt).toLocaleString()}</div>
+        </div>
+    `;
+
+    /* body */
+    const body = document.createElement("div");
+    body.className="post-body";
+    body.innerText = postObj.body;
+
+    /* like */
+    const likeBtn = document.createElement("button");
+    likeBtn.className="like-btn";
+    likeBtn.innerHTML = `♡ <span>${postObj.likesCount}</span>`;
+    likeBtn.onclick = ()=> toggleLike(postObj.id);
+
+    /* comments */
+    const commentInput = document.createElement("input");
+    commentInput.className="comment-input";
+    commentInput.placeholder="Write a comment...";
+
+    const commentBtn = document.createElement("button");
+    commentBtn.innerText="Comment";
+    commentBtn.onclick = ()=> {
+        addComment(postObj.id, commentInput.value);
+        commentInput.value="";
+    };
+
+    const commentsArea = document.createElement("div");
+    commentsArea.className="comments-list";
+
+    /* append */
+    wrapper.appendChild(menuWrap);
+    wrapper.appendChild(head);
+    wrapper.appendChild(body);
+    wrapper.appendChild(likeBtn);
+    wrapper.appendChild(commentInput);
+    wrapper.appendChild(commentBtn);
+    wrapper.appendChild(commentsArea);
+
+
+    onValue(ref(db, `experiences/${postObj.id}/comments`),(snap)=>{
+        commentsArea.innerHTML="";
+        const val = snap.val()||{};
+        Object.values(val).forEach(c=>{
+            const d=document.createElement("div");
+            d.className="comment-item";
+            d.innerHTML=`<span class="comment-author">${c.authorName}</span> ${c.text}`;
+            commentsArea.appendChild(d);
+        });
+    });
+
+    onValue(ref(db, `experiences/${postObj.id}`),(snap)=>{
+        const d=snap.val();
+        if(d){
+            likeBtn.innerHTML = `${d.likedBy && d.likedBy[currentUser.uid]? "❤️":"♡"} <span>${d.likesCount}</span>`;
+        }
+    });
+
+    return wrapper;
+}
+
+function setupRealtimeListeners(){
+    onValue(ref(db,"experiences"),(snap)=>{
+        postsContainer.innerHTML="";
+        const val=snap.val()||{};
+        const arr=Object.values(val).sort((a,b)=>b.createdAt - a.createdAt);
+        arr.forEach(p=> postsContainer.appendChild(createPostElement(p)));
+    });
+}
+
+shareBtn.onclick = ()=> createPost(shareInput.value);
+
+</script>
+  
+  <script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '69077c8c2c2c409d8b3aa75d' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+  
+</body>
+</html>
+    
+  </body>
+  
+</html>

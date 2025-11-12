@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Literary Works</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pen & Gavel | Literary Works</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      color: #4b3832;
+      background-color: #4b3832;
+    }
+
+    /* Header */
+    header {
+      background-color: #e9e3db;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b3832;
+      font-size: 1rem;
+      transition: opacity 0.3s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    /* Groups Section */
+    .groups-section {
+      background-color: #4b3832;
+      color: #e9e3db;
+      text-align: left;
+      padding: 60px 8%;
+    }
+
+    .groups-section h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .groups-section p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 50px;
+      max-width: 800px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #4b3832;
+      border: 2px solid #e9e3db;
+      width: 250px;
+      text-align: center;
+      color: #e9e3db;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-bottom: 2px solid #e9e3db;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 20px 10px 10px 10px;
+      line-height: 1.6;
+    }
+
+    .card button {
+      background-color: #e9e3db;
+      color: #4b3832;
+      border: none;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      padding: 8px 25px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .card button:hover {
+      opacity: 0.8;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #e9e3db;
+      color: #4b3832;
+      text-align: center;
+      padding: 40px 5%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .footer-col {
+      max-width: 250px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-col a {
+      color: #4b3832;
+      text-decoration: none;
+    }
+
+    .footer-col a:hover {
+      text-decoration: underline;
+    }
+
+    .email {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .email-icon {
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid #4b3832;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PEN & GAVEL</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="constitutional-articles.html">Constitutional Articles</a></li>
+        <li><a href="past-cases.html">Past Cases</a></li>
+        <li><a href="literary-works.html">Literary Works</a></li>
+        <li><a href="legislation.html">Legislation</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="groups-section">
+    <h2>Groups</h2>
+    <p>
+      Please note that the articles are intended for informational purposes and may not be entirely accurate.
+      Readers are advised to exercise discretion and verify details independently.
+    </p>
+
+    <div class="card-container">
+      <div class="card">
+        <img src="https://i.ibb.co/ksDK3Wy0/poem.jpg" alt="Poems">
+        <h3>POEMS — WHISPERS OF THE SOUL</h3>
+        <button>VIEW</button>
+      </div>
+
+      <div class="card">
+        <img src="https://i.ibb.co/xtSzWyHW/article.jpg" alt="Articles">
+        <h3>ARTICLES — VOICES OF STRENGTH</h3>
+        <button>VIEW</button>
+      </div>
+
+      <div class="card">
+        <img src="https://i.ibb.co/Kz7WsV4B/personal-experiences.jpg" alt="Life Experiences">
+        <h3>LIFE EXPERIENCES — STORIES FROM THE HEART</h3>
+        <button>VIEW</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-col">
+      <p><strong>7827170170 - NCW Helpline:</strong><br>
+        Connects women directly to police, hospitals, One Stop Centres, and legal authorities for safety, support, and protection in emergencies or personal crises.</p>
+    </div>
+    <div class="footer-col">
+      <p><strong>1091 - Women Police Helpline:</strong><br>
+        Provides immediate police assistance to women in distress and is linked to the national Emergency Response Support System (ERSS 112).</p>
+    </div>
+    <div class="footer-col">
+      <p><strong>108 - Ambulance Helpline:</strong><br>
+        Offers quick access to ambulance and medical emergency services across India.</p>
+    </div>
+    <div class="footer-col">
+      <p><strong>181 - Women Helpline:</strong><br>
+        A 24×7 helpline offering emergency response, counselling, legal guidance, and information on government welfare schemes for women.</p>
+    </div>
+    <div class="footer-col">
+      <p><strong>112 - National Emergency Number:</strong><br>
+        A single, all-India emergency number for police, fire, and ambulance services under the Nirbhaya Fund scheme, ensuring rapid response across all states and UTs.</p>
+    </div>
+    <div class="footer-col">
+      <p>We’d love to hear from you.<br>Connect with us at:</p>
+      <div class="email">
+        <div class="email-icon">@</div>
+        <a href="mailto:penandgavelofficial@gmail.com">penandgavelofficial@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '69077c8c2c2c409d8b3aa75d' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          }
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+  
+</body>
+</html>
+    
+  </body>
+  
+</html>
