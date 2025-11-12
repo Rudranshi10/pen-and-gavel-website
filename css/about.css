@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Cormorant Garamond", serif;
+    background: url("https://i.ibb.co/dwX37hSG/image.jpg") no-repeat center/cover;
+    background-attachment: fixed;
+    color: #3B2A1E;
+}
+
+header {
+    background-color: #E9DBC6;
+    padding: 18px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #3B2A1E;
+    font-size: 18px;
+    font-family: "Playfair Display", serif;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #8B6F47;
+}
+
+.content-box {
+    width: 70%;
+    margin: 80px auto;
+    background-color: rgba(233, 219, 198, 0.85);
+    padding: 40px 60px;
+    border-radius: 30px;
+    font-size: 22px;
+    line-height: 1.55;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content-box h2 {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+footer {
+    background-color: rgba(233, 219, 198, 0.9);
+    padding: 40px;
+    margin-top: 100px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.footer-item strong {
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-box {
+        width: 85%;
+        padding: 30px 40px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    
+    .logo {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav a {
+        margin: 5px 15px;
+        font-size: 16px;
+    }
+    
+    .content-box {
+        width: 90%;
+        margin: 40px auto;
+        padding: 25px 30px;
+        font-size: 20px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+    }
+    
+    nav a {
+        margin: 5px 10px;
+        font-size: 14px;
+    }
+    
+    .content-box {
+        width: 95%;
+        padding: 20px;
+        font-size: 18px;
+    }
+    
+    .content-box h2 {
+        font-size: 24px;
+    }
+    
+    footer {
+        padding: 30px 20px;
+    }
+    
+    .footer-item {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,128 @@
+/* Fonts and Basic Setup */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f3e4d3;
+  color: #3b2a24;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #4b2b20;
+  color: #f5e6d3;
+}
+
+header .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f5e6d3;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #e3c8a8;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.2);
+}
+
+/* Tagline */
+.tagline {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  margin: 50px 15px;
+  color: #4b2b20;
+}
+
+/* Footer */
+footer {
+  background-color: #4b2b20;
+  color: #f5e6d3;
+  padding: 40px 60px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1 1 300px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer-col strong {
+  font-family: 'Playfair Display', serif;
+}
+
+.contact {
+  margin-top: 20px;
+}
+
+.email {
+  display: inline-block;
+  margin-top: 10px;
+  color: #f5e6d3;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-container {
+    flex-direction: column;
+  }
+  .tagline {
+    font-size: 16px;
+    margin: 30px 10px;
+  }
+}
