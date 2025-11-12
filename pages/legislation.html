@@ -1,163 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>legislation</title>
-    
-
-  </head>
-    
-  <body>
-  <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Legislation Page</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-    body {
-        margin: 0;
-        font-family: "Playfair Display", serif;
-        background-color: #3B201B;
-        color: #2c1a15;
-    }
-
-    /* HEADER */
-    .header {
-        width: 100%;
-        background-color: #4B3832; 
-        padding: 15px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-sizing: border-box;
-        position: sticky;
-        top: 0;
-        z-index: 999;
-    }
-
-    .logo {
-        font-size: 22px;
-        font-weight: bold;
-        color: #E3C9B0;
-    }
-
-    .nav {
-        display: flex;
-        gap: 25px;
-        font-size: 13px;
-    }
-
-    .nav a {
-        text-decoration: none;
-        color: #E3C9B0;
-        transition: 0.3s ease;
-    }
-
-    .nav a:hover {
-        color: black;
-    }
-
-    /* TITLE BOX */
-    .title-box {
-        width: 70%;
-        margin: 40px auto;
-        padding: 15px;
-        color: #E3C9B0;
-        border: 2px solid #E3C9B0;
-        border-radius: 40px;
-        text-align: center;
-        font-size: 30px;
-        letter-spacing: 1px;
-    }
-
-    /* BARS */
-    .bar {
-        background-color: #f5d2b8;
-        padding: 18px 20px;
-        border-radius: 12px;
-        margin: 15px auto;
-        width: 95%;
-        display: flex;
-        align-items: center;
-        transition: 0.3s ease;
-        font-size: 15px;
-    }
-
-    .bar:hover {
-        background-color: #5E4239;
-        color: #E3C9B0;
-        transform: scale(1.01);
-    }
-
-    /* Arrow Circle */
-    .arrow {
-        width: 32px;
-        height: 32px;
-        background-color: #E3C9B0;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 15px;
-        font-size: 16px;
-        color: #4B3832;
-        transition: 0.3s ease;
-    }
-
-    .bar:hover .arrow {
-        background-color: #4B3832;
-        color: #E3C9B0;
-    }
-
-    /* FOOTER GRID */
-    .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, auto);
-        gap: 20px;
-        padding: 40px;
-        text-align: center;
-        color: #E3C9B0;
-        font-size: 11px;
-        line-height: 1.5;
-        background-color: #3B201B;
-    }
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legislation</title>
+    <link rel="stylesheet" href="../css/constitutional-articles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <!-- HEADER -->
 <div class="header">
     <div class="logo">PEN & GAVEL</div>
-
     <div class="nav">
-        <li><a href="pages/index.html">Homepage</a></li>
-    <li><a href="pages/about.html">About</a></li>
-<li><a href="pages/constitutional-articles.html">Constitutional Articles</a></li>
-<li><a href="pages/past-cases.html">Past Cases</a></li>
-<li><a href="pages/literary.html">Literary Works</a></li>
-<li><a href="pages/legislation.html">Legislation</a></li>
+        <li><a href="../index.html">Homepage</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="constitutional-articles.html">Constitutional Articles</a></li>
+        <li><a href="past-cases.html">Past Cases</a></li>
+        <li><a href="literary.html">Literary Works</a></li>
+        <li><a href="legislation.html">Legislation</a></li>
     </div>
 </div>
 
 <!-- TITLE -->
 <div class="title-box">Legislation</div>
 
-<!-- BARS -->
-<div class="bar"><div class="arrow">❮</div>Domestic Violence</div>
-<div class="bar"><div class="arrow">❮</div>Human Trafficking</div>
-<div class="bar"><div class="arrow">❮</div>Obscenity & Indecent Representation</div>
-<div class="bar"><div class="arrow">❮</div>Rape</div>
-<div class="bar"><div class="arrow">❮</div>Sexual & Mental Harassment</div>
+<!-- CLICKABLE BARS -->
+<a href="domestic-violence.html" style="text-decoration: none; color: inherit;">
+    <div class="bar"><div class="arrow">❮</div>Domestic Violence</div>
+</a>
+<a href="human-trafficking.html" style="text-decoration: none; color: inherit;">
+    <div class="bar"><div class="arrow">❮</div>Human Trafficking</div>
+</a>
+<a href="obscenity.html" style="text-decoration: none; color: inherit;">
+    <div class="bar"><div class="arrow">❮</div>Obscenity & Indecent Representation</div>
+</a>
+<a href="rape.html" style="text-decoration: none; color: inherit;">
+    <div class="bar"><div class="arrow">❮</div>Rape</div>
+</a>
+<a href="sexual-harassment.html" style="text-decoration: none; color: inherit;">
+    <div class="bar"><div class="arrow">❮</div>Sexual & Mental Harassment</div>
+</a>
 
-<!-- FOOTER GRID -->
-<!-- FOOTER BOX -->
+<!-- FOOTER -->
 <div style="background-color: #E3C9B0; padding: 40px 20px; margin-top: 40px;">
-
     <div style="
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -170,42 +56,34 @@
         font-size: 12px;
         line-height: 1.5;
     ">
-    
         <div>
             7827016709 - NCW Helpline  
             <br>Connects women directly to police, hospitals, One Stop Centres, and legal authorities for safety, support, and protection in emergencies.
         </div>
-
         <div>
             181 - Women Helpline  
             <br>24×7 emergency assistance, counseling, legal guidance, and information on government welfare schemes for women.
         </div>
-
         <div>
             1091 - Women Police Helpline  
             <br>Immediate police assistance for women in distress; linked to the national Emergency Response Support System (ERSS 112).
         </div>
-
         <div>
             108 - Ambulance Helpline  
             <br>Quick access to ambulance and medical emergency services across India.
         </div>
-
         <div>
-            We’d love to hear from you.  
+            We'd love to hear from you.  
             <br>Connect with us at:  
             <br>penandgavelofficial@gmail.com
         </div>
-
         <div>
             National services aim to support and protect women and ensure access to safe, reliable emergency response systems.
         </div>
-
     </div>
-
 </div>
-  
-  <script type="text/javascript">
+
+<script type="text/javascript">
   (function(d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
       v.onload = function() {
@@ -221,10 +99,6 @@
       v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
   })(document, 'script');
 </script>
-  
-  </body>
-</html>
-    
-  </body>
-  
+
+</body>
 </html>
