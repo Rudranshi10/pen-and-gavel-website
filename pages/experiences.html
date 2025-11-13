@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>experiences</title>
-    
-
-  </head>
-    
-  <body>
-  <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -53,6 +43,9 @@
         display:flex;
         gap:22px;
         align-items:center;
+        list-style:none;
+        margin:0;
+        padding:0;
     }
     .nav a{
         color:var(--cream);
@@ -164,6 +157,7 @@
     .post-body{
         line-height:1.8;
         font-size:16px;
+        white-space: pre-wrap;
     }
 
     .like-btn{
@@ -188,6 +182,16 @@
         border-radius:2px;
     }
 
+    .comment-btn{
+        margin-top:10px;
+        padding:8px 16px;
+        background:var(--gold);
+        color:var(--cream);
+        border:none;
+        cursor:pointer;
+        border-radius:2px;
+    }
+
     .comments-list{
         margin-top:12px;
     }
@@ -201,16 +205,17 @@
         margin-right:8px;
     }
 
-    /* ✅ menu styling */
     .post-menu{
         position:absolute;
         top:20px;
         right:20px;
         cursor:pointer;
-        z-index:20;
+        z-index:10;
     }
     .dots{
         font-size:22px;
+        padding:5px 10px;
+        user-select:none;
     }
     .menu-dropdown{
         display:none;
@@ -223,15 +228,23 @@
         border-radius:6px;
         box-shadow:0 6px 18px rgba(0,0,0,0.15);
         z-index:50;
+        min-width:120px;
+    }
+    .menu-dropdown.show{
+        display:flex;
     }
     .menu-dropdown button{
         background:transparent;
         border:none;
-        padding:6px 10px;
+        padding:8px 12px;
         color:var(--cream);
         font-weight:700;
         cursor:pointer;
         text-align:left;
+        font-size:14px;
+    }
+    .menu-dropdown button:hover{
+        background:rgba(255,255,255,0.1);
     }
 
     .site-footer{
@@ -258,11 +271,11 @@
     <div class="brand">PEN &amp; GAVEL</div>
     <nav class="nav">
         <li><a href="../index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-<li><a href="constitutional-articles.html">Constitutional Articles</a></li>
-<li><a href="past-cases.html">Past Cases</a></li>
-<li><a href="literary.html">Literary Works</a></li>
-<li><a href="legislation.html">Legislation</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="constitutional-articles.html">Constitutional Articles</a></li>
+        <li><a href="past-cases.html">Past Cases</a></li>
+        <li><a href="literary.html">Literary Works</a></li>
+        <li><a href="legislation.html">Legislation</a></li>
     </nav>
 </header>
 
@@ -294,33 +307,26 @@
     </div>
 </footer>
 
-
-<!-- ✅ FIREBASE + LOGIC  -->
 <script type="module">
+
+// ============= CRITICAL: LOGIN REDIRECT PATH =============
+const LOGIN_PAGE_URL = "../login/index.html";
+const CURRENT_PAGE_URL = window.location.href;
 
 const firebaseConfig = {
     apiKey: "AIzaSyC4Yjfr1WqoM-PmEQxHq-Sj2BTQvmoBOkk",
-        authDomain: "penandgavelposts.firebaseapp.com",
-        databaseURL: "https://penandgavelposts-default-rtdb.firebaseio.com/",
-        projectId: "penandgavelposts",
-        storageBucket: "penandgavelposts.firebasestorage.app",
-        messagingSenderId: "1094706446735",
-        appId: "1:1094706446735:web:0d86c105c86ba51ab20bfa"
+    authDomain: "penandgavelposts.firebaseapp.com",
+    databaseURL: "https://penandgavelposts-default-rtdb.firebaseio.com/",
+    projectId: "penandgavelposts",
+    storageBucket: "penandgavelposts.firebasestorage.app",
+    messagingSenderId: "1094706446735",
+    appId: "1:1094706446735:web:0d86c105c86ba51ab20bfa"
 };
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 import {
-    getDatabase,
-    ref,
-    push,
-    onValue,
-    set,
-    get,
-    update,
-    runTransaction,
-    remove,
-    child
+    getDatabase, ref, push, onValue, set, get, update, runTransaction, remove
 } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
 const app = initializeApp(firebaseConfig);
@@ -332,10 +338,11 @@ const shareInput = document.getElementById("shareText");
 const shareBtn = document.getElementById("shareBtn");
 let currentUser = null;
 
+// ============= AUTH CHECK =============
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        alert("Login required.");
-        return;
+        localStorage.setItem("redirectAfterLogin", CURRENT_PAGE_URL);
+        window.location.href = LOGIN_PAGE_URL;
     } else {
         currentUser = user;
         ensureSamplePost().then(setupRealtimeListeners);
@@ -349,7 +356,7 @@ async function ensureSamplePost() {
         await set(sampleRef, {
             id: "sample_post",
             title: "Voices of Strength",
-            body: "Your journey matters — every triumph, every tear, every quiet moment of strength. This is a safe and nurturing corner where women can open up about their personal experiences. Share your story, and let it remind another woman that she’s not alone. Together, our stories weave a tapestry of courage and connection.",
+            body: "Your journey matters — every triumph, every tear, every quiet moment of strength. This is a safe and nurturing corner where women can open up about their personal experiences. Share your story, and let it remind another woman that she's not alone. Together, our stories weave a tapestry of courage and connection.",
             authorName: "Pen&Gavel",
             authorAvatar: "https://i.ibb.co/m5xLPmHZ/Corporate-Logo-Designs-Logo-Image-1.jpg",
             createdAt: Date.now(),
@@ -404,7 +411,9 @@ async function addComment(postId,text){
 }
 
 async function deletePost(postId){
-    await remove(ref(db, `experiences/${postId}`));
+    if(confirm("Delete this post?")){
+        await remove(ref(db, `experiences/${postId}`));
+    }
 }
 
 async function editPost(postId){
@@ -419,52 +428,65 @@ async function editPost(postId){
     }
 }
 
-/* ✅ Updated with menu */
 function createPostElement(postObj){
     const wrapper = document.createElement("div");
     wrapper.className="post-card";
     wrapper.dataset.id = postObj.id;
 
-    /* ✅ 3-dot menu */
     const menuWrap = document.createElement("div");
     menuWrap.className = "post-menu";
-    menuWrap.innerHTML = `<div class="dots">⋮</div>`;
-
+    
+    const dotsSpan = document.createElement("span");
+    dotsSpan.className = "dots";
+    dotsSpan.textContent = "⋮";
+    
     const dropdown = document.createElement("div");
     dropdown.className = "menu-dropdown";
-    dropdown.innerHTML = `
-        <button class="edit-btn">Edit</button>
-        <button class="delete-btn">Delete</button>
-        <button class="report-btn">Report</button>
-    `;
-
+    
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    
+    const reportBtn = document.createElement("button");
+    reportBtn.textContent = "Report";
+    
+    dropdown.appendChild(editBtn);
+    dropdown.appendChild(deleteBtn);
+    dropdown.appendChild(reportBtn);
+    menuWrap.appendChild(dotsSpan);
     menuWrap.appendChild(dropdown);
 
-    menuWrap.onclick = (e)=>{
+    dotsSpan.addEventListener("click", (e) => {
         e.stopPropagation();
-        dropdown.style.display = dropdown.style.display==="flex" ? "none":"flex";
-    };
+        dropdown.classList.toggle("show");
+    });
 
-    document.addEventListener("click", ()=> dropdown.style.display="none");
-
-    dropdown.querySelector(".edit-btn").onclick = ()=>{
-        dropdown.style.display="none";
-        editPost(postObj.id);
-    };
-
-    dropdown.querySelector(".delete-btn").onclick = ()=>{
-        dropdown.style.display="none";
-        if(confirm("Delete this post?")){
-            deletePost(postObj.id);
+    document.addEventListener("click", (e) => {
+        if (!menuWrap.contains(e.target)) {
+            dropdown.classList.remove("show");
         }
-    };
+    });
 
-    dropdown.querySelector(".report-btn").onclick = ()=>{
-        dropdown.style.display="none";
-        alert("Reported!");
-    };
+    editBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdown.classList.remove("show");
+        editPost(postObj.id);
+    });
 
-    /* header */
+    deleteBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdown.classList.remove("show");
+        deletePost(postObj.id);
+    });
+
+    reportBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdown.classList.remove("show");
+        alert("Post reported. Thank you for keeping our community safe.");
+    });
+
     const head = document.createElement("div");
     head.className="post-header";
     head.innerHTML = `
@@ -475,23 +497,21 @@ function createPostElement(postObj){
         </div>
     `;
 
-    /* body */
     const body = document.createElement("div");
     body.className="post-body";
     body.innerText = postObj.body;
 
-    /* like */
     const likeBtn = document.createElement("button");
     likeBtn.className="like-btn";
     likeBtn.innerHTML = `♡ <span>${postObj.likesCount}</span>`;
     likeBtn.onclick = ()=> toggleLike(postObj.id);
 
-    /* comments */
     const commentInput = document.createElement("input");
     commentInput.className="comment-input";
     commentInput.placeholder="Write a comment...";
 
     const commentBtn = document.createElement("button");
+    commentBtn.className="comment-btn";
     commentBtn.innerText="Comment";
     commentBtn.onclick = ()=> {
         addComment(postObj.id, commentInput.value);
@@ -501,7 +521,6 @@ function createPostElement(postObj){
     const commentsArea = document.createElement("div");
     commentsArea.className="comments-list";
 
-    /* append */
     wrapper.appendChild(menuWrap);
     wrapper.appendChild(head);
     wrapper.appendChild(body);
@@ -509,7 +528,6 @@ function createPostElement(postObj){
     wrapper.appendChild(commentInput);
     wrapper.appendChild(commentBtn);
     wrapper.appendChild(commentsArea);
-
 
     onValue(ref(db, `experiences/${postObj.id}/comments`),(snap)=>{
         commentsArea.innerHTML="";
@@ -542,10 +560,13 @@ function setupRealtimeListeners(){
 }
 
 shareBtn.onclick = ()=> createPost(shareInput.value);
+shareInput.addEventListener("keypress", (e) => {
+    if(e.key === "Enter") createPost(shareInput.value);
+});
 
 </script>
-  
-  <script type="text/javascript">
+
+<script type="text/javascript">
   (function(d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
       v.onload = function() {
@@ -561,10 +582,6 @@ shareBtn.onclick = ()=> createPost(shareInput.value);
       v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
   })(document, 'script');
 </script>
-  
+
 </body>
-</html>
-    
-  </body>
-  
 </html>
