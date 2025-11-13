@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #e9e3db;
+    font-family: "Times New Roman", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.login-box {
+    background: #fff;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+h2 {
+    color: #3B201B;
+}
+
+.subtitle {
+    color: #6E4C3A;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 15px;
+    color: #3B201B;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #c7b9af;
+    font-size: 15px;
+}
+
+.primary-btn, .secondary-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background: #3B201B;
+    color: white;
+    border: none;
+}
+
+.google-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 15px;
+    border: 2px solid #ddd;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.google-btn img {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+.switch-text {
+    margin-top: 20px;
+    color: #6E4C3A;
+}
+
+.switch-link {
+    color: #3B201B;
+    cursor: pointer;
+    text-decoration: underline;
+}

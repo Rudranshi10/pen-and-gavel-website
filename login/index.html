@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Pen & Gavel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-box">
+
+        <!-- SIGNUP SCREEN -->
+        <div id="signup-screen" class="screen active">
+            <h2>Create Your Account</h2>
+            <p class="subtitle">Join us</p>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="signup-email" placeholder="Enter your email">
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="signup-password" placeholder="Create a password">
+            </div>
+
+            <button id="signup-btn" class="primary-btn">Create Account</button>
+
+            <div class="divider"><span>OR</span></div>
+
+            <button id="google-signup" class="google-btn">
+                <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+                Continue with Google
+            </button>
+
+            <p class="switch-text">Already have an account? 
+                <span class="switch-link" id="go-to-login">Login</span>
+            </p>
+        </div>
+
+        <!-- LOGIN SCREEN -->
+        <div id="login-screen" class="screen">
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Sign in to continue</p>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="login-email" placeholder="Enter your email">
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="login-password" placeholder="Enter your password">
+            </div>
+
+            <button id="login-btn" class="primary-btn">Login</button>
+
+            <div class="divider"><span>OR</span></div>
+
+            <button id="google-login" class="google-btn">
+                <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+                Continue with Google
+            </button>
+
+            <p class="switch-text">Don't have an account?
+                <span class="switch-link" id="go-to-signup">Create account</span>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
