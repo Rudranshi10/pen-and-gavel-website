@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Poems</title>
-    
-
-  </head>
-    
-  <body>
-  <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -29,7 +19,7 @@ body{margin:0;font-family:"Times New Roman", serif;background:var(--maroon);colo
 
 .brand{font-size:38px;letter-spacing:2px;font-weight:400}
 
-.nav{display:flex;gap:22px;align-items:center}
+.nav{display:flex;gap:22px;align-items:center;list-style:none;margin:0;padding:0}
 .nav a{color:var(--maroon);text-decoration:none;font-size:16px}
 
 .container{max-width:1100px;margin:26px auto;padding:0 24px 120px}
@@ -73,7 +63,7 @@ body{margin:0;font-family:"Times New Roman", serif;background:var(--maroon);colo
 .post-author{font-size:18px;font-weight:700;color:var(--cream)}
 .post-time{font-size:13px;color:#e3cfcf}
 .post-title{font-size:22px;margin:14px 0 12px;color:var(--cream)}
-.post-body{color:#f0d9d9;line-height:1.8;font-size:16px}
+.post-body{color:#f0d9d9;line-height:1.8;font-size:16px;white-space:pre-wrap}
 
 .post-actions{display:flex;gap:10px;align-items:center;margin-top:14px}
 
@@ -85,6 +75,11 @@ body{margin:0;font-family:"Times New Roman", serif;background:var(--maroon);colo
 .comment-input{
     margin-top:14px;width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.06);
     background:transparent;color:var(--cream);border-radius:2px
+}
+
+.comment-btn{
+    margin-top:10px;padding:8px 16px;background:var(--cream);color:var(--maroon);
+    border:none;cursor:pointer;border-radius:2px;font-family:"Times New Roman", serif
 }
 
 .comments-list{margin-top:12px}
@@ -101,16 +96,17 @@ body{margin:0;font-family:"Times New Roman", serif;background:var(--maroon);colo
 }
 .footer-grid p{font-size:14px;margin:6px 0;line-height:1.6;color:var(--maroon)}
 
-.post-menu{position:absolute;top:20px;right:20px;cursor:pointer}
-.dots{font-size:22px;color:var(--cream);line-height:1}
+.post-menu{position:absolute;top:20px;right:20px;cursor:pointer;z-index:10}
+.dots{font-size:22px;color:var(--cream);line-height:1;padding:5px 10px;user-select:none}
 
 .menu-dropdown{
     display:none;flex-direction:column;position:absolute;top:30px;right:0;background:var(--cream);
-    padding:8px;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.15);z-index:50
+    padding:8px;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.15);z-index:50;min-width:120px
 }
+.menu-dropdown.show{display:flex}
 .menu-dropdown button{
-    background:transparent;border:none;padding:6px 10px;color:var(--maroon);font-weight:700;
-    cursor:pointer;text-align:left
+    background:transparent;border:none;padding:8px 12px;color:var(--maroon);font-weight:700;
+    cursor:pointer;text-align:left;font-size:14px
 }
 .menu-dropdown button:hover{background:#efe9e6}
 
@@ -128,11 +124,11 @@ body{margin:0;font-family:"Times New Roman", serif;background:var(--maroon);colo
     <div class="brand">PEN &amp; GAVEL</div>
     <nav class="nav">
         <li><a href="../index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-<li><a href="constitutional-articles.html">Constitutional Articles</a></li>
-<li><a href="past-cases.html">Past Cases</a></li>
-<li><a href="literary.html">Literary Works</a></li>
-<li><a href="legislation.html">Legislation</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="constitutional-articles.html">Constitutional Articles</a></li>
+        <li><a href="past-cases.html">Past Cases</a></li>
+        <li><a href="literary.html">Literary Works</a></li>
+        <li><a href="legislation.html">Legislation</a></li>
     </nav>
 </header>
 
@@ -147,7 +143,7 @@ body{margin:0;font-family:"Times New Roman", serif;background:var(--maroon);colo
         <hr class="divider-hr">
     </section>
 
-    <section class="share-wrap" aria-label="Share something">
+    <section class="share-wrap">
         <input class="share-input" id="shareText" placeholder="Share something..." />
         <button class="send-btn" id="shareBtn">send</button>
     </section>
@@ -159,67 +155,63 @@ body{margin:0;font-family:"Times New Roman", serif;background:var(--maroon);colo
     <div class="footer-grid">
         <div>
             <p>7827170170 - NCW Helpline:<br>
-            Connects women directly to police, hospitals, One Stop Centres, and legal authorities for safety,
-            support, and protection in emergencies or personal crises.</p>
+            Connects women directly to police, hospitals, One Stop Centres, and legal authorities.</p>
         </div>
         <div>
             <p>1091 - Women Police Helpline:<br>
-            Provides immediate police assistance to women in distress and linked to the national ERSS 112.</p>
+            Provides immediate police assistance to women in distress.</p>
         </div>
         <div>
             <p>108 - Ambulance Helpline:<br>
-            Offers quick access to ambulance and medical emergency services across India.</p>
+            Quick access to emergency medical services.</p>
         </div>
         <div>
-            <p>181 - Women Helpline:<br>A 24x7 helpline offering emergency response, counselling, legal guidance.</p>
+            <p>181 - Women Helpline:<br>24x7 emergency response and counselling.</p>
         </div>
         <div>
-            <p>112 - National Emergency Number:<br>A single, all-India emergency number for police, fire, ambulance.</p>
+            <p>112 - National Emergency Number:<br>Single emergency number for all services.</p>
         </div>
         <div>
-            <p>We'd love to hear from you.<br>Connect with us at:<br><strong>penandgavel.official@gmail.com</strong></p>
+            <p>Connect with us at:<br><strong>penandgavel.official@gmail.com</strong></p>
         </div>
     </div>
 </footer>
 
 <script type="module">
 
-// --------------------- CONFIG ---------------------
-const LOGIN_PAGE_URL = "https://codepen.io/PenandGavel/full/vELqwvW";
-const POEMS_PAGE_URL = location.href;
+// ============= CRITICAL: LOGIN REDIRECT PATH =============
+const LOGIN_PAGE_URL = "../login/index.html";
+const CURRENT_PAGE_URL = window.location.href;
 
 const firebaseConfig = {
     apiKey: "AIzaSyC4Yjfr1WqoM-PmEQxHq-Sj2BTQvmoBOkk",
-        authDomain: "penandgavelposts.firebaseapp.com",
-        databaseURL: "https://penandgavelposts-default-rtdb.firebaseio.com/",
-        projectId: "penandgavelposts",
-        storageBucket: "penandgavelposts.firebasestorage.app",
-        messagingSenderId: "1094706446735",
-        appId: "1:1094706446735:web:0d86c105c86ba51ab20bfa"
+    authDomain: "penandgavelposts.firebaseapp.com",
+    databaseURL: "https://penandgavelposts-default-rtdb.firebaseio.com/",
+    projectId: "penandgavelposts",
+    storageBucket: "penandgavelposts.firebasestorage.app",
+    messagingSenderId: "1094706446735",
+    appId: "1:1094706446735:web:0d86c105c86ba51ab20bfa"
 };
 
-// --------------------- IMPORTS ---------------------
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 import {
-    getDatabase, ref, push, onValue, set, get, child, update, runTransaction, remove
+    getDatabase, ref, push, onValue, set, get, update, runTransaction, remove
 } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
-// --------------------- INIT -----------------------
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
 
-// --------------------- ELEMENTS -------------------
 const postsContainer = document.getElementById("postsContainer");
 const shareInput = document.getElementById("shareText");
 const shareBtn = document.getElementById("shareBtn");
 let currentUser = null;
 
-// --------------------- AUTH -----------------------
+// ============= AUTH CHECK =============
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        localStorage.setItem("redirectAfterLogin", POEMS_PAGE_URL);
+        localStorage.setItem("redirectAfterLogin", CURRENT_PAGE_URL);
         window.location.href = LOGIN_PAGE_URL;
     } else {
         currentUser = user;
@@ -227,7 +219,6 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-// -------------------- SAMPLE POST -----------------
 async function ensureSamplePost(){
     try{
         const sampleRef = ref(db, "posts/sample_post");
@@ -252,7 +243,6 @@ Each poem is a piece of your soul, and this space celebrates it with love.`,
     }
 }
 
-// --------------------- CREATE POST ---------------------
 async function createPost(text){
     if(!currentUser) return alert("You must be logged in to post.");
     if(!text || !text.trim()) return;
@@ -260,19 +250,17 @@ async function createPost(text){
     const postsRef = ref(db, "posts");
     const newPostRef = push(postsRef);
 
-    const payload = {
-        id: newPostRef.key,
-        title: "",
-        body: text.trim(),
-        authorName: currentUser.displayName || currentUser.email || "Unknown",
-        authorAvatar: currentUser.photoURL || "https://i.ibb.co/m5xLPmHZ/Corporate-Logo-Designs-Logo-Image-1.jpg",
-        createdAt: Date.now(),
-        likesCount: 0,
-        likedBy: {}
-    };
-
     try{
-        await set(newPostRef, payload);
+        await set(newPostRef, {
+            id: newPostRef.key,
+            title: "",
+            body: text.trim(),
+            authorName: currentUser.displayName || currentUser.email || "Unknown",
+            authorAvatar: currentUser.photoURL || "https://i.ibb.co/m5xLPmHZ/Corporate-Logo-Designs-Logo-Image-1.jpg",
+            createdAt: Date.now(),
+            likesCount: 0,
+            likedBy: {}
+        });
         shareInput.value = "";
     }catch(err){
         console.error("post create err", err);
@@ -280,10 +268,8 @@ async function createPost(text){
     }
 }
 
-// --------------------- LIKE TOGGLE ---------------------
 async function toggleLike(postId){
     if(!currentUser) return alert("Login to like.");
-
     const postRef = ref(db, `posts/${postId}`);
 
     try{
@@ -307,14 +293,12 @@ async function toggleLike(postId){
     }
 }
 
-// --------------------- COMMENT ---------------------
 async function addComment(postId, text){
     if(!currentUser) return alert("Login to comment.");
     if(!text || !text.trim()) return;
 
-    const commentsRef = ref(db, `posts/${postId}/comments`);
     try{
-        await push(commentsRef, {
+        await push(ref(db, `posts/${postId}/comments`), {
             authorName: currentUser.displayName || currentUser.email || "Unknown",
             text: text.trim(),
             createdAt: Date.now()
@@ -324,7 +308,6 @@ async function addComment(postId, text){
     }
 }
 
-// --------------------- DELETE POST ---------------------
 async function deletePost(postId){
     if(!currentUser) return alert("Login required.");
 
@@ -340,14 +323,12 @@ async function deletePost(postId){
         }
 
         if(!confirm("Delete this post?")) return;
-
         await remove(ref(db, `posts/${postId}`));
     }catch(err){
         console.error("delete err", err);
     }
 }
 
-// ---------------------- EDIT POST ----------------------
 async function editPost(postId){
     if(!currentUser) return alert("Login required.");
     try{
@@ -374,197 +355,137 @@ async function editPost(postId){
     }
 }
 
-// ---------------------- HELPERS ----------------------
-function formatDate(ts){
-    if(!ts) return "";
-    return new Date(ts).toLocaleString();
-}
-
-function escapeHtml(s){
-    if(!s) return "";
-    return String(s).replace(/[&<>"'=\/]/g, function(c) {
-        return {
-            "&": "&amp;",
-            "<": "&lt;",
-            ">": "&gt;",
-            '"': "&quot;",
-            "'": "&#39;",
-            "/": "&#x2F;",
-            "`": "&#x60;",
-            "=": "&#x3D;"
-        }[c];
-    });
-}
-
-// ---------------------- RENDER POST ----------------------
 function createPostElement(postObj){
-
-    const id = postObj.id;
     const container = document.createElement("article");
     container.className = "post-card";
-    container.dataset.id = id;
+    container.dataset.id = postObj.id;
 
-    // menu
     const menuWrap = document.createElement("div");
     menuWrap.className = "post-menu";
-    menuWrap.innerHTML = `
-        <span class="dots">⋮</span>
-        <div class="menu-dropdown">
-            <button class="edit-btn">Edit</button>
-            <button class="delete-btn">Delete</button>
-            <button class="report-btn">Report</button>
-        </div>
-    `;
+    
+    const dotsSpan = document.createElement("span");
+    dotsSpan.className = "dots";
+    dotsSpan.textContent = "⋮";
+    
+    const dropdown = document.createElement("div");
+    dropdown.className = "menu-dropdown";
+    
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
+    
+    const reportBtn = document.createElement("button");
+    reportBtn.textContent = "Report";
+    
+    dropdown.appendChild(editBtn);
+    dropdown.appendChild(deleteBtn);
+    dropdown.appendChild(reportBtn);
+    menuWrap.appendChild(dotsSpan);
+    menuWrap.appendChild(dropdown);
 
-    // header
+    dotsSpan.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle("show");
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!menuWrap.contains(e.target)) {
+            dropdown.classList.remove("show");
+        }
+    });
+
+    editBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdown.classList.remove("show");
+        editPost(postObj.id);
+    });
+
+    deleteBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdown.classList.remove("show");
+        deletePost(postObj.id);
+    });
+
+    reportBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdown.classList.remove("show");
+        alert("Post reported. Thank you.");
+    });
+
     const header = document.createElement("div");
     header.className = "post-header";
     header.innerHTML = `
         <div class="avatar">
-            <img src="${escapeHtml(postObj.authorAvatar || 'https://i.ibb.co/m5xLPmHZ/Corporate-Logo-Designs-Logo-Image-1.jpg')}" alt="avatar">
+            <img src="${postObj.authorAvatar || 'https://i.ibb.co/m5xLPmHZ/Corporate-Logo-Designs-Logo-Image-1.jpg'}" alt="avatar">
         </div>
         <div>
-            <div class="post-author">${escapeHtml(postObj.authorName || 'Unknown')}</div>
-            <div class="post-time">${formatDate(postObj.createdAt)}</div>
+            <div class="post-author">${postObj.authorName || 'Unknown'}</div>
+            <div class="post-time">${new Date(postObj.createdAt).toLocaleString()}</div>
         </div>
     `;
 
-    // title
-    const title = document.createElement("div");
-    title.className="post-title";
-    title.textContent = postObj.title || "";
-
-    // body
     const body = document.createElement("div");
     body.className="post-body";
     body.innerText = postObj.body || "";
 
-    // actions
-    const actions = document.createElement("div");
-    actions.className="post-actions";
-
     const likeBtn = document.createElement("button");
     likeBtn.className="like-btn";
     likeBtn.innerHTML = `❤ <span style="margin-left:8px">${postObj.likesCount || 0}</span>`;
-    likeBtn.onclick = ()=> toggleLike(id);
+    likeBtn.onclick = ()=> toggleLike(postObj.id);
 
-    actions.appendChild(likeBtn);
-
-    // comment box
     const commentInput = document.createElement("input");
     commentInput.className="comment-input";
     commentInput.placeholder="Write a comment...";
 
     const commentSubmit = document.createElement("button");
+    commentSubmit.className="comment-btn";
     commentSubmit.textContent="Comment";
-    commentSubmit.style.marginTop="10px";
-    commentSubmit.style.padding="8px 12px";
-    commentSubmit.style.background="transparent";
-    commentSubmit.style.color="var(--cream)";
-    commentSubmit.style.border="1px solid rgba(255,255,255,0.06)";
-    commentSubmit.style.cursor="pointer";
     commentSubmit.onclick = ()=> {
-        addComment(id, commentInput.value);
+        addComment(postObj.id, commentInput.value);
         commentInput.value="";
     };
 
-    // comments area
     const commentsArea = document.createElement("div");
     commentsArea.className="comments-list";
 
-    // menu functionality
-    const menuDropdown = menuWrap.querySelector(".menu-dropdown");
-    menuWrap.querySelector(".edit-btn").onclick = ()=> editPost(id);
-    menuWrap.querySelector(".delete-btn").onclick = ()=> deletePost(id);
-    menuWrap.querySelector(".report-btn").onclick = ()=> alert("Reported");
-
-    // assemble post
     container.appendChild(menuWrap);
     container.appendChild(header);
-    if(title.textContent) container.appendChild(title);
     container.appendChild(body);
-    container.appendChild(actions);
+    container.appendChild(likeBtn);
     container.appendChild(commentInput);
     container.appendChild(commentSubmit);
     container.appendChild(commentsArea);
 
-    // COMMENTS realtime listener
-    onValue(ref(db, `posts/${id}/comments`), (snap)=>{
+    onValue(ref(db, `posts/${postObj.id}/comments`), (snap)=>{
         commentsArea.innerHTML = "";
-
         const val = snap.val() || {};
-        const keys = Object.keys(val);
-
-        keys.sort((a,b)=>{
-            const ta = val[a].createdAt||0;
-            const tb = val[b].createdAt||0;
-            return ta - tb;
+        const keys = Object.keys(val).sort((a,b)=>{
+            return (val[a].createdAt||0) - (val[b].createdAt||0);
         });
 
         keys.forEach(k=>{
             const c = val[k];
             const d = document.createElement("div");
             d.className="comment-item";
-
-            const authorSpan = document.createElement("span");
-            authorSpan.className="comment-author";
-            authorSpan.textContent = c.authorName || "Unknown";
-
-            const textSpan = document.createElement("span");
-            textSpan.textContent = " " + (c.text || "");
-
-            const timeDiv = document.createElement("div");
-            timeDiv.style.fontSize="12px";
-            timeDiv.style.marginTop="6px";
-            timeDiv.style.color="#e3cfcf";
-            timeDiv.textContent = formatDate(c.createdAt);
-
-            d.appendChild(authorSpan);
-            d.appendChild(textSpan);
-            d.appendChild(timeDiv);
-
+            d.innerHTML=`<span class="comment-author">${c.authorName || 'Unknown'}</span> ${c.text || ''}`;
             commentsArea.appendChild(d);
         });
     });
 
-    // POST realtime listener
-    onValue(ref(db, `posts/${id}`), (snap)=>{
+    onValue(ref(db, `posts/${postObj.id}`), (snap)=>{
         const d = snap.val();
         if(!d){
             container.remove();
             return;
         }
-
         likeBtn.innerHTML = `❤ <span style="margin-left:8px">${d.likesCount||0}</span>`;
-
-        const isAuthor =
-            currentUser &&
-            (d.authorName === (currentUser.displayName || currentUser.email) ||
-            d.authorUid === currentUser.uid ||
-            (d.id === "sample_post" && d.authorName==="Pen&Gavel"));
-
-        if(isAuthor){
-            menuWrap.style.display = "block";
-        } else {
-            menuWrap.style.display = "none";
-        }
-    });
-
-    menuWrap.querySelector(".dots").addEventListener("click", (ev)=>{
-        ev.stopPropagation();
-        const dd = menuWrap.querySelector(".menu-dropdown");
-        dd.style.display = dd.style.display === "flex" ? "none" : "flex";
-    });
-
-    document.addEventListener("click", ()=>{
-        const dd = menuWrap.querySelector(".menu-dropdown");
-        if(dd) dd.style.display = "none";
     });
 
     return container;
 }
 
-// ------------------ POSTS LISTENER ------------------
 function setupRealtimeListeners(){
     onValue(ref(db, "posts"), (snap)=>{
         const posts = snap.val() || {};
@@ -573,7 +494,6 @@ function setupRealtimeListeners(){
         );
 
         postsContainer.innerHTML = "";
-
         items.forEach(item=>{
             const el = createPostElement(item);
             postsContainer.appendChild(el);
@@ -581,10 +501,8 @@ function setupRealtimeListeners(){
     });
 }
 
-// ------------------ EVENTS ------------------
 shareBtn.addEventListener("click", ()=> createPost(shareInput.value));
-
-shareInput.addEventListener("keydown", (e)=>{
+shareInput.addEventListener("keypress", (e)=>{
     if(e.key === "Enter"){
         e.preventDefault();
         createPost(shareInput.value);
@@ -592,6 +510,7 @@ shareInput.addEventListener("keydown", (e)=>{
 });
 
 </script>
+
 <script type="text/javascript">
   (function(d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -608,9 +527,6 @@ shareInput.addEventListener("keydown", (e)=>{
       v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
   })(document, 'script');
 </script>
+
 </body>
-</html>
-    
-  </body>
-  
 </html>
