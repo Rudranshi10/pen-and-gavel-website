@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Literary Works</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -97,6 +86,7 @@
       color: #e9e3db;
       overflow: hidden;
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
 
     .card:hover {
@@ -222,22 +212,22 @@
     </p>
 
     <div class="card-container">
-      <div class="card">
+      <div class="card" onclick="navigateToPage('poems.html')">
         <img src="https://i.ibb.co/ksDK3Wy0/poem.jpg" alt="Poems">
         <h3>POEMS — WHISPERS OF THE SOUL</h3>
-        <button>VIEW</button>
+        <button onclick="navigateToPage('poems.html')">VIEW</button>
       </div>
 
-      <div class="card">
+      <div class="card" onclick="navigateToPage('articles.html')">
         <img src="https://i.ibb.co/xtSzWyHW/article.jpg" alt="Articles">
         <h3>ARTICLES — VOICES OF STRENGTH</h3>
-        <button>VIEW</button>
+        <button onclick="navigateToPage('articles.html')">VIEW</button>
       </div>
 
-      <div class="card">
+      <div class="card" onclick="navigateToPage('experiences.html')">
         <img src="https://i.ibb.co/Kz7WsV4B/personal-experiences.jpg" alt="Life Experiences">
         <h3>LIFE EXPERIENCES — STORIES FROM THE HEART</h3>
-        <button>VIEW</button>
+        <button onclick="navigateToPage('experiences.html')">VIEW</button>
       </div>
     </div>
   </section>
@@ -264,13 +254,19 @@
         A single, all-India emergency number for police, fire, and ambulance services under the Nirbhaya Fund scheme, ensuring rapid response across all states and UTs.</p>
     </div>
     <div class="footer-col">
-      <p>We’d love to hear from you.<br>Connect with us at:</p>
+      <p>We'd love to hear from you.<br>Connect with us at:</p>
       <div class="email">
         <div class="email-icon">@</div>
         <a href="mailto:penandgavelofficial@gmail.com">penandgavelofficial@gmail.com</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    function navigateToPage(page) {
+      window.location.href = page;
+    }
+  </script>
   
   <script type="text/javascript">
   (function(d, t) {
@@ -290,8 +286,4 @@
 </script>
   
 </body>
-</html>
-    
-  </body>
-  
 </html>
