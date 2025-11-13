@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>legislation</title>
-    
-
-  </head>
-    
-  <body>
-  <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,6 +65,7 @@
 
     /* BARS */
     .bar {
+        cursor: pointer; /* Added this line */
         background-color: #f5d2b8;
         padding: 18px 20px;
         border-radius: 12px;
@@ -136,11 +127,11 @@
 
     <div class="nav">
         <li><a href="../index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-<li><a href="constitutional-articles.html">Constitutional Articles</a></li>
-<li><a href="past-cases.html">Past Cases</a></li>
-<li><a href="literary.html">Literary Works</a></li>
-<li><a href="legislation.html">Legislation</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="constitutional-articles.html">Constitutional Articles</a></li>
+        <li><a href="past-cases.html">Past Cases</a></li>
+        <li><a href="literary.html">Literary Works</a></li>
+        <li><a href="legislation.html">Legislation</a></li>
     </div>
 </div>
 
@@ -148,16 +139,24 @@
 <div class="title-box">Legislation</div>
 
 <!-- BARS -->
-<div class="bar"><div class="arrow">❮</div>Domestic Violence</div>
-<div class="bar"><div class="arrow">❮</div>Human Trafficking</div>
-<div class="bar"><div class="arrow">❮</div>Obscenity & Indecent Representation</div>
-<div class="bar"><div class="arrow">❮</div>Rape</div>
-<div class="bar"><div class="arrow">❮</div>Sexual & Mental Harassment</div>
+<div class="bar" onclick="navigateToPage('domestic-violence.html')">
+    <div class="arrow">❮</div>Domestic Violence
+</div>
+<div class="bar" onclick="navigateToPage('human-trafficking.html')">
+    <div class="arrow">❮</div>Human Trafficking
+</div>
+<div class="bar" onclick="navigateToPage('obscenity.html')">
+    <div class="arrow">❮</div>Obscenity & Indecent Representation
+</div>
+<div class="bar" onclick="navigateToPage('rape.html')">
+    <div class="arrow">❮</div>Rape
+</div>
+<div class="bar" onclick="navigateToPage('sexual-harassment.html')">
+    <div class="arrow">❮</div>Sexual & Mental Harassment
+</div>
 
 <!-- FOOTER GRID -->
-<!-- FOOTER BOX -->
 <div style="background-color: #E3C9B0; padding: 40px 20px; margin-top: 40px;">
-
     <div style="
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -170,42 +169,40 @@
         font-size: 12px;
         line-height: 1.5;
     ">
-    
         <div>
             7827016709 - NCW Helpline  
             <br>Connects women directly to police, hospitals, One Stop Centres, and legal authorities for safety, support, and protection in emergencies.
         </div>
-
         <div>
             181 - Women Helpline  
             <br>24×7 emergency assistance, counseling, legal guidance, and information on government welfare schemes for women.
         </div>
-
         <div>
             1091 - Women Police Helpline  
             <br>Immediate police assistance for women in distress; linked to the national Emergency Response Support System (ERSS 112).
         </div>
-
         <div>
             108 - Ambulance Helpline  
             <br>Quick access to ambulance and medical emergency services across India.
         </div>
-
         <div>
-            We’d love to hear from you.  
+            We'd love to hear from you.  
             <br>Connect with us at:  
             <br>penandgavelofficial@gmail.com
         </div>
-
         <div>
             National services aim to support and protect women and ensure access to safe, reliable emergency response systems.
         </div>
-
     </div>
-
 </div>
+
+<script>
+    function navigateToPage(page) {
+        window.location.href = page;
+    }
+</script>
   
-  <script type="text/javascript">
+<script type="text/javascript">
   (function(d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
       v.onload = function() {
@@ -222,9 +219,5 @@
   })(document, 'script');
 </script>
   
-  </body>
-</html>
-    
-  </body>
-  
+</body>
 </html>
